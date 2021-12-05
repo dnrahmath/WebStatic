@@ -388,14 +388,14 @@ nav.menu ul li.dd:hover .dd-content {
 
     .crLeft{
         float: left;
-        background-color: #169ba0;
+        background-color: #1dcdd4;
         width: 90%;
         height: 100%;
     }
 
     .crRight{
         float: right;
-        background-color: #169ba0;
+        background-color: #1dcdd4;
         width: 10%;
         height: 100%;
     }
