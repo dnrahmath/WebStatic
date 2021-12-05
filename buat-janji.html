@@ -3,6 +3,33 @@
 <head>
 	<title>RS. INDAH LARASWATI</title>
 	<link rel="stylesheet" type="text/css" href="./style/style.css">
+	<style>
+		input, select {
+		  width: 100%;
+		  padding: 12px 20px;
+		  margin: 8px 0;
+		  display: inline-block;
+		  border: 1px solid #ccc;
+		  border-radius: 4px;
+		  box-sizing: border-box;
+		}
+		
+		input[type=submit] {
+		  width: 100%;
+		  background-color: #1aa9bc;
+		  color: white;
+		  padding: 14px 20px;
+		  margin: 8px 0;
+		  border: none;
+		  border-radius: 4px;
+		  cursor: pointer;
+		}
+		
+		input[type=submit]:hover {
+		  background-color: #1a99aa;
+		}
+		
+		</style>
 </head>
 <body>
 	
@@ -60,8 +87,41 @@
 			<!-- bagian konten Blog -->
 			<div class="blog">
 				<div class="conteudo">
-					<h1>Formulir Buat Janji</h1>
-					<p>-- isi Form buat-janji --</p>
+					<h2>Formulir Buat Janji Pelayanan</h2>
+
+					<form>
+						<br><br><br>
+					  	<label for="fname">Nama :</label>
+					  	<input type="text" id="fname" name="fname">
+					  	<br><br>
+					  	<label for="jkel">Jenis Kelamin :</label>
+					  	<select id="jkel" name="jkel">
+					    	<option value="Laki-Laki">Laki-Laki</option>
+					    	<option value="Perempuan">Perempuan</option>
+					  	</select>
+					  	<br><br>
+					  	<label for="tglLahir">Tanggal Lahir :</label>
+					  	<input type="date" id="tglLahir" name="tglLahir">
+					  	<br><br>
+					  	<label for="phone">Telpon :</label>
+					  	<input type="tel" id="phone" name="phone" placeholder="+62">
+					  	<br><br>
+					  	<label for="email">Email :</label>
+					  	<input type="email" id="email" name="email">
+					  	<br><br>
+					  	<label for="jPel">Jenis Pelayanan :</label>
+					  	<select id="jPel" name="jPel">
+					    	<option value="Rawat-Jalan">Rawat Jalan</option>
+					    	<option value="Rawat-Inap">Rawat Inap</option>
+					    	<option value="Rawat-Darurat">Rawat Darurat</option>
+					  	</select>
+					  	<br><br>
+					  	<label for="JanjiMingguan">Janji Pada Minggu ke- :</label>
+					  	<input type="week" id="JanjiMingguan" name="JanjiMingguan">
+					  	<br>
+					  	<br><br>
+					  	<input type="submit" value="Submit">
+					</form>
 					<p>.</p>	
 				</div>
 
