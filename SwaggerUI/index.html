@@ -8,25 +8,8 @@
   <div id="swagger-ui"></div>
 
   <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+  <script type="module" src="./index.js"></script>
   <script>
-    window.onload = function() {
-      // Initialize Swagger UI
-      const ui = SwaggerUIBundle({
-        url: "https://raw.githubusercontent.com/dnrahmath/wsp-tenda/master/docs/swagger.yaml", // URL to your Swagger file
-        dom_id: '#swagger-ui',
-        deepLinking: true,
-        presets: [
-          SwaggerUIBundle.presets.apis,
-          SwaggerUIBundle.SwaggerUIStandalonePreset
-        ],
-        plugins: [
-          SwaggerUIBundle.plugins.DownloadUrl
-        ],
-        layout: "StandaloneLayout"
-      })
-
-      window.ui = ui
-    }
   </script>
 </body>
 </html>
