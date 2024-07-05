@@ -1,0 +1,150 @@
+openapi: 3.0.0
+info:
+  title: EasyAuthAPI
+  version: '1.0'
+servers:
+  - url: 'easyauthapi-production.up.railway.app'
+paths:
+  /api/auth/register:
+    post:
+      summary: Register
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                value:
+                  type: string
+                  example: user1@email.com
+                password:
+                  type: string
+                  example: 88888888
+      responses:
+        '200':
+          description: Success
+  /api/auth/login:
+    post:
+      summary: Login
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                value:
+                  type: string
+                  example: user1@email.com
+                password:
+                  type: string
+                  example: 88888888
+      responses:
+        '200':
+          description: Success
+  /api/auth/me:
+    get:
+      summary: Get User Info
+      parameters:
+        - in: header
+          name: Access-Token
+          schema:
+            type: string
+          required: true
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        - in: header
+          name: Refresh-Token
+          schema:
+            type: string
+          required: false
+          example: ''
+      responses:
+        '200':
+          description: Success
+  /api/auth/refresh:
+    get:
+      summary: Refresh Token
+      parameters:
+        - in: header
+          name: Access-Token
+          schema:
+            type: string
+          required: false
+          example: ''
+        - in: header
+          name: Refresh-Token
+          schema:
+            type: string
+          required: true
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+      responses:
+        '200':
+          description: Success
+  /api/auth/logout:
+    get:
+      summary: Logout
+      parameters:
+        - in: header
+          name: Access-Token
+          schema:
+            type: string
+          required: true
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        - in: header
+          name: Refresh-Token
+          schema:
+            type: string
+          required: false
+          example: ''
+      responses:
+        '200':
+          description: Success
+  /api/token/sendcode:
+    post:
+      summary: Send Code
+      parameters:
+        - in: header
+          name: Access-Token
+          schema:
+            type: string
+          required: true
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        - in: header
+          name: Refresh-Token
+          schema:
+            type: string
+          required: true
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        - in: query
+          name: type
+          schema:
+            type: string
+          required: true
+          example: email
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                value:
+                  type: string
+                  example: user1@email.com
+                password:
+                  type: string
+                  example: 88888888
+      responses:
+        '200':
+          description: Success
+  /api/token/{token}:
+    get:
+      summary: Verify
+      parameters:
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+      responses:
+        '200':
+          description: Success
