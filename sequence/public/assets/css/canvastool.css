@@ -1,0 +1,99 @@
+
+button {
+    margin: 0.25%;
+    padding: 0.25%;
+    font-size: 0.75em;
+    display: block;
+    width: 100%;
+    align-self: flex-start;
+}
+
+input {
+    margin: 1%;
+    width: 100%;
+}
+
+/*-------------------------------------*/
+#sectionCanvasTools {
+    width: 71.25vw; /*size-content*/
+    align-content: center;
+    top: 97vh;
+    position: absolute;
+    max-width: 71.25vw; /*size-content*/ /* Add this line to prevent sectionCanvasTools from extending beyond viewport width */
+}
+
+/*------------------*/
+#focusButton {
+    width: 100%;
+    display: flex;
+}
+
+#focusButton button {
+    width: 50%;
+}
+
+/*--------------------------------------------------------------------------------------------*/
+#opacityFocusCanvasSlider {
+    width: 100%;
+    display: flex;
+    color: #000;
+}
+
+#opacityFocusCanvasSlider input[type="range"] {
+    width: 75%;
+}
+
+#opacityFocusCanvasSlider input[type="number"] {
+    width: 10%;
+}
+
+#opacityFocusCanvasSlider p[name="tittle"] {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 10%;
+}
+/*------------------------------------*/
+
+#PosCanvasSlider {
+    width: 100%;
+    display: flex;
+    color: #000;
+}
+
+#PosCanvasSlider input[type="range"] {
+    width: 75%;
+}
+
+#PosCanvasSlider input[type="number"] {
+    width: 10%;
+}
+
+#PosCanvasSlider p[name="tittle"] {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 10%;
+}
+/*------------------------------------*/
+
+#ScaleCanvasSlider {
+    width: 100%;
+    display: flex;
+    color: #000;
+}
+
+#ScaleCanvasSlider input[type="range"] {
+    width: 75%;
+}
+
+#ScaleCanvasSlider input[type="number"] {
+    width: 10%;
+}
+
+#ScaleCanvasSlider p[name="tittle"] {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 10%;
+}
+/*--------------------------------------------------------------------------------------------*/
+
+

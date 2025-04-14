@@ -4,6 +4,8 @@
 
 # List Web
 
+- https://dnrahmath.github.io/WebStatic/sequence
+
 - https://dnrahmath.github.io/WebStatic/Website-Pelayanan-Informasi-Rumah-Sakit-Indah-Laraswati/
 
 - https://dnrahmath.github.io/WebStatic/SwaggerUI

@@ -1,0 +1,19 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload GLB and Display in Babylon.js</title>
+</head>
+<body>
+  <input type="file" id="glbFileInput" accept=".glb">
+  <canvas id="renderCanvas"></canvas>
+
+  <!-- Load Babylon.js and GLTF loader directly from CDN -->
+  <script src="https://cdn.babylonjs.com/babylon.max.js"></script>
+  <script src="https://cdn.babylonjs.com/loaders/babylon.glTF2FileLoader.js"></script>
+
+  <script src="/public/assets/js/index-glb.js"></script>
+</body>
+</html>

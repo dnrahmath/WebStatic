@@ -1,0 +1,30 @@
+
+1. Pastikan Aplikasi telah terinstal pada Path (windows) :
+$env:PATH -split ';' 
+
+
+2. Pastikan Anda bekerja dalam modul. Jika belum, inisialisasi modul dengan menjalankan perintah:
+go mod init server-golang
+
+
+3. Setelah Anda memiliki modul, Anda bisa menggunakan go get seperti biasa:
+go get -u github.com/gin-gonic/gin
+
+
+4. Setelah Anda mengunduh dependensi dengan go get, pastikan untuk menjalankan go mod tidy untuk membersihkan modul dan menyinkronkan dependensi:
+go mod tidy
+
+
+5. jika ingin jalankan golang tanpa build :
+go run ./server.go
+
+
+
+6.1. Build Project
+go build -o ./build/go-starter ./server.go
+go build -o ./build/go-starter.exe ./server.go
+
+6.2. Run the Project
+./build/go-starter
+./build/go-starter.exe
+

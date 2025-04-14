@@ -1,0 +1,18 @@
+/* index.css */
+
+html,
+body {
+    margin: 0;
+    overflow-y: auto;
+    /* overflow-y: hidden; */
+    overflow-x: hidden; /* Add this line to hide horizontal scrollbar */
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*--------------------------------------------------------------------------------------------*/

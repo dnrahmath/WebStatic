@@ -1,0 +1,113 @@
+    <!--index.html-->
+    <!--
+        Sama seperti index.html didepan tetapi beda path saja
+    -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Babylon.js Scene with GLB Model</title>
+        <link rel="stylesheet" type="text/css" href="/public/assets/css/index.css">
+        <link rel="stylesheet" type="text/css" href="/public/assets/css/canvas.css">
+        <link rel="stylesheet" type="text/css" href="/public/assets/css/canvastool.css">
+        <link rel="stylesheet" type="text/css" href="/public/assets/css/modal.css">
+    </head>
+    <body>
+        <section id="sectionCanvas">
+            <canvas id="renderCanvasPanoramic" width="1920" height="1080"></canvas>
+            <canvas id="renderCanvasGLB" width="1920" height="1080"></canvas>
+        </section>
+        <section id="sectionCanvasTools">
+            <button id="btnOpenModalUpload" class="file-upload-btn" type="button" >Open Upload Modal</button> <!--type="submit"-->
+            <button id="modeRenderButton">[ Mode Render, when You Click Canvas - Play : OFF ]</button>
+            <!-- <button id="btnCanvasReset">If you can't Click the Canvas, Click Here {RESET CANVAS}</button> -->
+            <button id="btnSingleCaptureCanvas">Single Capture Canvas</button>
+            <button id="btnOpenModalImageCapture">Open Modal Image Capture Canvas</button>
+            <div id="opacityFocusCanvasSlider">
+                <p name="tittle" id="opacityRangeFocusCanvasTittle">Opacity Range Focus Canvas : </p>
+                <input type="range" min="0" max="1" step="0.01" value="0.5" id="opacityRangeFocusCanvas">
+                <input type="number" min="0" max="1" step="0.01" value="0.5" id="opacityRangeFocusCanvasVal">
+            </div>
+            <div id="focusButton">
+                <button id="focusCanvasPanoramicButton">Focus Button Panoramic</button>
+                <button id="focusCanvasGLBButton">Focus Button GLB</button>
+            </div>
+            <div id="PosCanvasSlider">
+                <p name="tittle" id="PosTopCanvasTittle">Pos Top Canvas : </p>
+                <input type="range" min="0" max="100" step="0.1" value="1" id="PosTopCanvas">
+                <input type="number" min="0" max="100" step="0.1" value="1" id="PosTopCanvasVal">
+                <p>vh</p>
+                <p name="tittle" id="PosLeftCanvasTittle">Pos Left Canvas : </p>
+                <input type="range" min="0" max="100" step="0.1" value="1" id="PosLeftCanvas">
+                <input type="number" min="0" max="100" step="0.1" value="1" id="PosLeftCanvasVal">
+                <p>vw</p>
+            </div>
+            <div id="ScaleCanvasSlider">
+                <p name="tittle" id="ScaleHeightCanvasTittle">Scale Responsive Canvas : </p>
+                <input type="number" min="0" max="125" step="0.1" value="10" id="ScaleResponsiveCanvasVal">
+                <input type="range" min="0" max="125" step="0.1" value="10" id="ScaleCanvas"> 
+                <p name="tittle" id="ScaleHeightCanvasTittle">Scale Height Canvas : </p>
+                <input type="number" min="0" max="125" step="0.1" value="10" id="ScaleHeightCanvasVal">
+                <p>vh</p>
+                <p name="tittle" id="ScaleWidthCanvasTittle">Scale Width Canvas : </p>
+                <input type="number" min="0" max="125" step="0.1" value="10" id="ScaleWidthCanvasVal">
+                <p>vw</p>
+            </div>
+        </section>
+        
+
+        <section>
+            <div id="myModalUpload" class="modal" style="display: none;">
+              <div class="modal-content">
+                <span id="closeModalUpload" class="close">&times;</span>
+                <p>Drag untuk memperbarui atau menampilkan file</p>
+                <br>
+                <div id="uploadGLBWrap" class="image-upload-wrap">
+                  <input class="file-upload-input" id="idUploadGLB" type="file" name="uploadGLBFile" accept=".glb"/>
+                  <div class="drag-text">
+                    <h3>Drag and drop a file .glb</h3>
+                  </div>
+                </div>
+                <br>
+                <button id="btnShowPanoramicUpload">btnShowPanoramicUpload : Turn ON</button>
+                <br>
+                <div hidden id="uploadPNGPanoramicWrap" class="image-upload-wrap">
+                  <input class="file-upload-input" id="idPNGPanoramic" type="file" name="uploadPNGPanoramicFile[]" accept=".png" allowdirs multiple />
+                  <div class="drag-text">
+                    <h3>Drag and drop a file or select add Image</h3>
+                  </div>
+                </div>
+                <br>
+              </div>
+            </div>
+        </section>
+
+        <!-- Modal Section -->
+        <section>
+            <div id="myModalViewImage" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span id="closeModalViewImage" class="close">&times;</span>
+                    <br>
+                    <div id="focusButton">
+                        <button id="PrevImgButton">Prev</button>
+                        <button id="NextImgButton">Next</button>
+                    </div>
+                    <br>
+                    <div id="setOfImages">
+                        <img id="modalSequenceImage" width="1920" height="1080">
+                    </div>
+                    <button id="downloadButton">Download Image</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ensure you are using the latest version of Babylon.js -->
+        <script type="module" src="/public/assets/js/CanvasPanoramic.js"></script>
+        <script type="module" src="/public/assets/js/CanvasGLBGUI.js"></script>
+        <script type="module" src="/public/assets/js/Tools.js"></script>
+        <script type="module" src="/public/assets/js/CanvasGLB.js"></script>
+        <script type="module" src="/public/assets/js/index.js"></script>
+        <script type="module" src="/public/assets/js/modal.js"></script>
+    </body>
+    </html>

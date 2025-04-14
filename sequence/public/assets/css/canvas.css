@@ -1,0 +1,29 @@
+
+canvas {
+    width: 71.25vw; /*size-content*/
+    height: 82.5vh; /*size-canvas*/
+    align-self: flex-start;
+}
+
+#sectionCanvas {
+    position: absolute;
+    padding: 5px;
+    pointer-events: auto;
+    display: block;
+    width: 71.25vw; /*size-content*/
+    height: 82.5vh; /*size-canvas*/
+}
+
+
+
+/*-------------------------------------*/
+
+#renderCanvasPanoramic {
+    z-index: 2;
+}
+
+#renderCanvasGLB {
+    z-index: 1;
+}
+
+/*-------------------------------------*/

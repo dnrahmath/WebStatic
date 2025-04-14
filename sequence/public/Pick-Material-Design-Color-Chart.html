@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Design Color Chart</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h2, h3 {
+            margin-bottom: 0;
+        }
+
+        #colorShadesContainer {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .color-row {
+            display: flex;
+            margin-bottom: 1px;
+        }
+
+        .color-cell {
+            width: 70px;
+            height: 70px;
+            margin-right: 1px;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .color-cell > div {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .color-hex {
+            font-size: 14px;
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(0%,6.25%);
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Material Design Color Chart</h2>
+
+<div>
+    <h3>Color Shades</h3>
+    <br>
+
+    <!-- Container untuk warna -->
+    <div id="colorShadesContainer"></div>
+</div>
+
+<script>
+    // Material Design Colors
+    const materialColors = [
+        {name: 'Red', code: '#f44336'},
+        {name: 'Pink', code: '#e91e63'},
+        {name: 'Purple', code: '#9c27b0'},
+        {name: 'Deep Purple', code: '#673ab7'},
+        {name: 'Indigo', code: '#3f51b5'},
+        {name: 'Blue', code: '#2196f3'},
+        {name: 'Light Blue', code: '#03a9f4'},
+        {name: 'Cyan', code: '#00bcd4'},
+        {name: 'Teal', code: '#009688'},
+        {name: 'Green', code: '#4caf50'},
+        {name: 'Light Green', code: '#8bc34a'},
+        {name: 'Lime', code: '#cddc39'},
+        {name: 'Yellow', code: '#ffeb3b'},
+        {name: 'Amber', code: '#ffc107'},
+        {name: 'Orange', code: '#ff9800'},
+        {name: 'Deep Orange', code: '#ff5722'},
+        {name: 'Brown', code: '#795548'},
+        {name: 'Grey', code: '#9e9e9e'},
+        {name: 'Blue Grey', code: '#607d8b'}
+    ];
+
+    // to populate the color container
+    const populateColors = () => {
+        const colorShadesContainer = document.getElementById('colorShadesContainer');
+
+        // Create color row for each shade
+        for (let i = 0; i < 7; i++) {
+            const colorRow = document.createElement('div');
+            colorRow.className = 'color-row';
+
+            // Create a color cell for each color
+            materialColors.forEach(color => {
+                const shadedColor = generateShade(color.code, i);
+                const hexColor = rgbaToHex(shadedColor);
+                const cell = document.createElement('div');
+                cell.className = 'color-cell';
+                cell.innerHTML = `<div style="background-color: ${shadedColor};"></div>
+                                  <div class="color-hex">${hexColor}</div>`;
+                cell.addEventListener('click', () => {
+                    copyToClipboard(hexColor, shadedColor);
+                });
+                colorRow.appendChild(cell);
+            });
+
+            // Append the color row to the container
+            colorShadesContainer.appendChild(colorRow);
+        }
+    };
+
+    // Function to generate a lighter or darker shade based on RGBA
+    const generateShade = (hex, step) => {
+        const rgba = hexToRgba(hex);
+        const values = rgba.replace(/rgba?\(|\)/g, '').split(',');
+        const r = parseInt(values[0].trim());
+        const g = parseInt(values[1].trim());
+        const b = parseInt(values[2].trim());
+        const a = parseFloat(values[3].trim());
+
+        const factor = step * 0.1;
+        const newR = Math.min(255, Math.max(0, Math.round(r + (255 - r) * factor)));
+        const newG = Math.min(255, Math.max(0, Math.round(g + (255 - g) * factor)));
+        const newB = Math.min(255, Math.max(0, Math.round(b + (255 - b) * factor)));
+
+        return `rgba(${newR}, ${newG}, ${newB}, ${a})`;
+    }
+
+    // Fungsi untuk mengonversi kode hex menjadi RGBA
+    const hexToRgba = (hex) => {
+        hex = hex.replace(/^#/, '');
+        const bigint = parseInt(hex, 16);
+        const r = (bigint >> 16) & 255;
+        const g = (bigint >> 8) & 255;
+        const b = bigint & 255;
+        return `rgba(${r}, ${g}, ${b}, 1)`;
+    }
+
+    // Fungsi untuk mengonversi RGBA menjadi kode hex
+    const rgbaToHex = (rgba) => {
+        const values = rgba.replace(/rgba?\(|\)/g, '').split(',');
+        const r = parseInt(values[0].trim());
+        const g = parseInt(values[1].trim());
+        const b = parseInt(values[2].trim());
+        const hex = ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0');
+        return `#${hex}`;
+    }
+
+    // Function to copy text hexColor to clipboard
+    const copyToClipboard = (hexColor, bgColor) => {
+        navigator.clipboard.writeText(hexColor).then(() => {
+            showCopyConfirmation(hexColor,bgColor);
+        }).catch((err) => {
+            console.error('Unable to copy text hexColor to clipboard', err);
+        });
+    }
+
+    // Function to show copy confirmation
+    const showCopyConfirmation = (hexColor,bgColor) => {
+        const confirmationPopup = document.createElement('div');
+        confirmationPopup.style.position = 'fixed';
+        confirmationPopup.style.bottom = '20px';
+        confirmationPopup.style.left = '50%';
+        confirmationPopup.style.transform = 'translateX(-50%)';
+        confirmationPopup.style.padding = '10px';
+        confirmationPopup.style.backgroundColor = bgColor;
+        confirmationPopup.style.color = '#000';
+        confirmationPopup.style.borderRadius = '5px';
+        confirmationPopup.innerText = `Color code '${hexColor}' copied to clipboard!`;
+        document.body.appendChild(confirmationPopup);
+
+        // Remove the confirmation popup after 2 seconds
+        setTimeout(() => {
+            document.body.removeChild(confirmationPopup);
+        }, 2000);
+    }
+
+    // Call the function to populate the color container
+    populateColors();
+</script>
+
+</body>
+</html>
