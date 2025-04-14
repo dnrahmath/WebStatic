@@ -1,0 +1,72 @@
+,----------------------------------------------------,
+
+inkscape --verb-list
+inkscape --action-list
+
+
+inkscape inkscapeToSVG-01.png --with-gui --actions="FullScreen; LayerNew; EditSelectAll; SelectionTrace;"
+
+,----------------------------------------------------,
+
+
+https://png2svg.com/
+
+
+0.
+open terminal : ctrl+T  // open fil
+inkscape inkscapeToSVG-01.png --with-gui --actions="FullScreen; LayerNew; EditSelectAll; SelectionTrace;"
+
+
+
+1.
+[Trace bitmap]
+Single Scan : Autotrace
+Multiple Scan : Colors
+ - ceklis : Smooth,Stack,Remove Background
+
+[Pixel art]
+ - ceklis : Optimize
+ 
+Teken Update
+Teken Apply
+
+
+
+2. 
+Layer go up (LayerMoveToNext) : Shift+PgUP
+//lalu layer yang bawah ditutup matanya 
+//SVG tidak dapat ke layar yang kecil
+
+
+
+3.
+SAVE AS : Shift+Ctrl+S
+	Optimized SVG(*.svg)
+	
+Quit : Ctrl+Q
+
+ 
+ 
+,----------------------------------------------------,
+ 
+ 
+ 
+ 
+ 
+ //--GAGAL-----------------------------------------------------------
+ 
+//--engga keisi namanya--//
+FileSaveAs:triangle_red.png;
+LayerNew:layer2;
+ 
+ 
+//--engga otomatis -> harus di accept--//
+-
+inkscape inkscapeToSVG-01.png --with-gui --actions="FullScreen; LayerNew; LayerMoveToNext;"
+-
+inkscape inkscapeToSVG-01.png --with-gui --actions="LayerNew; EditSelectAll; SelectionTrace;FileSaveAs:triangle_red.png;"
+-
+inkscape --without-gui --actions="export-id-only; export-id:Triangle; export-filename:action_triangle.png; export-do; export-id:Path; export-filename:action_path.png" export_test.svg
+
+
+ //--GAGAL-----------------------------------------------------------

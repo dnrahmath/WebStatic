@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+  <link rel="stylesheet" href="/static/index.css">
+  <title>Document</title>
+</head>
+
+
+<body>
+
+
+  <section>
+
+      <div class="file-upload">
+        <button class="file-upload-btn" id="myBtn" type="button" >Info File</button> <!--type="submit"-->
+      
+        <div class="image-upload-wrap">
+          <input class="file-upload-input" id="idFileInput" type="file" name="berkasIMG[]" onchange="" accept=".svg" allowdirs multiple />
+          <div class="drag-text">
+            <h3>Drag and drop a file or select add Image</h3>
+          </div>
+        </div>
+
+        <div class="formUploadTxt">
+          <div>
+            <label>Height - [ Vertical ]  : </label><input type="text" id="nmHeight" ><br><br>
+            <label>Width - [ Horizontal ] : </label><input type="text" id="nmWidth" ><br><br>
+          </div>
+          <div class="TxtFNameOut">
+            Your download will begin automatically. If it didn’t start, 
+            <a id="inputEgain" href="">Remove and Upload File egain.</a>  
+          </div>
+          <div class="TxtFNameOut" id="idFileNama">FileNama</div>
+          <div class="TxtFNameOut" id="status"></div>
+        </div>
+
+      </div>
+
+  </section>
+
+  <!----------------------------------------------------------------------------------------------->
+
+  <section>
+      <!-- The Modal -->
+      <div id="myModal" class="modal" style="display: none;">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Some text in the Modal..</p>
+          <br>
+
+
+          <button id="btnAccor0">btnAccor0 : Turn On</button> <!-- info file upload -->
+          <button id="btnAccor1">btnAccor1 : Turn On</button> <!-- img -->
+          <button id="btnAccor2">btnAccor2 : Turn On</button> <!-- vector -->
+          <button id="btnAccor3">btnAccor3 : Turn On</button> <!-- embed -->
+
+
+          <div hidden id="targetAccor0">
+              <section>
+                  <div>
+                      <br>
+                      <form action="">
+                          <div class="bagParent">
+                              <div class="bagParent1">
+                                  <div class="bag1">Nama</div>
+                                  <div class="bag2"> : </div>
+                                  <div class="bag3" id="idFileNama">FileNama</div>
+                              </div>
+                              <div class="bagParent1">
+                                  <div class="bag1">Size</div>
+                                  <div class="bag2"> : </div>
+                                  <div class="bag3" id="idFileSize">FileSize</div>
+                              </div>
+                              <div class="bagParent1">
+                                  <div class="bag1">Type</div>
+                                  <div class="bag2"> : </div>
+                                  <div class="bag3" id="idFileType">FileType</div>
+                              </div>
+                              <div class="bagParent1">
+                                  <div class="bag1">lastModifiedDate</div>
+                                  <div class="bag2"> : </div>
+                                  <div class="bag3" id="idFilelastModifiedDate">FilelastModifiedDate</div>
+                              </div>
+                              <div class="bagParent1">
+                                  <div class="bag1">Jumlah Seluruh File Upload</div>
+                                  <div class="bag2"> : </div>
+                                  <div class="bag3" id="idFileLength">FileLength</div>
+                              </div>
+                          </div>
+                      </form>
+
+                      <br>
+                  </div>
+              </section>
+          </div>
+
+          <div hidden id="targetAccor1">
+              <section>
+                  <div class="bagParent">
+                      <div class="bagParent1">
+                          <div class="bag1">StringFile</div>
+                          <div class="bag2"> : </div>
+                          <div class="bag3" id="outputTxt">outputTxt</div>
+                      </div>
+                      <div class="bagParent1">
+                          <img id="output">output</img>
+                      </div>
+                      <div class="bagParent1">
+                          <img id="outputArr">outputArr</img>
+                      </div>
+                  </div>
+              </section>
+          </div>
+
+          
+          <div hidden id="targetAccor2">
+              <section>
+                  <div class="bagParent">
+                      <p>,----------------------------------------------------,</p>
+                      <br>
+                      <p>inkscape --verb-list</p>
+                      <p>inkscape --action-list</p>
+                      <br>
+                      <p>inkscape inkscapeToSVG-01.png --with-gui --actions="FullScreen; LayerNew; EditSelectAll; SelectionTrace;"</p>
+                      <p>,----------------------------------------------------,</p>
+                      <br>
+                      <p>https://png2svg.com/</p>
+                      <br>
+
+                      <br>
+                      <p>0.</p>
+                      <p>open terminal : ctrl+T  // open fil</p>
+                      <p>inkscape inkscapeToSVG-01.png --with-gui --actions="FullScreen; LayerNew; EditSelectAll; SelectionTrace;"</p>
+                      <br>
+
+                      <br>
+                      <p>1.</p>
+                      <p>[Trace bitmap]</p>
+                      <p>Single Scan : Autotrace</p>
+                      <p>Multiple Scan : Colors</p>
+                      <p> - ceklis : Smooth,Stack,Remove Background</p>
+                      <br>
+
+                      <br>
+                      <p>[Pixel art]</p>
+                      <p>- ceklis : Optimize</p>
+                      <br>
+                      <p>Teken Update</p>
+                      <p>Teken Apply</p>
+                      <br>
+
+                      <br>
+                      <p>2. </p>
+                      <p>Layer go up (LayerMoveToNext) : Shift+PgUP</p>
+                      <p>//lalu layer yang bawah ditutup matanya </p>
+                      <p>//SVG tidak dapat ke layar yang kecil</p>
+                      <br>
+
+
+                      <br>
+                      <p>3.</p>
+                      <p>SAVE AS : Shift+Ctrl+S</p>
+                      <p>	Optimized SVG(*.svg)</p>
+                      <br>
+                      <p>Quit : Ctrl+Q</p>
+                    
+                    
+                      <br>
+                      <p>,----------------------------------------------------,</p>
+                    
+                    
+                    
+                    
+                      <br>
+                      <p> //--GAGAL-----------------------------------------------------------</p>
+                    
+                      <br>
+                      <p>//--engga keisi namanya--//</p>
+                      <p>FileSaveAs:triangle_red.png;</p>
+                      <p>LayerNew:layer2;</p>
+
+
+                      <br>
+                      <p>//--engga otomatis -> harus di accept--//</p>
+                      <p>-</p>
+                      <p>inkscape inkscapeToSVG-01.png --with-gui --actions="FullScreen; LayerNew; LayerMoveToNext;"</p>
+                      <p>-</p>
+                      <p>inkscape inkscapeToSVG-01.png --with-gui --actions="LayerNew; EditSelectAll; SelectionTrace;FileSaveAs:triangle_red.png;"</p>
+                      <p>-</p>
+                      <p>inkscape --without-gui --actions="export-id-only; export-id:Triangle; export-filename:action_triangle.png; export-do; export-id:Path; export-filename:action_path.png" export_test.svg</p>
+
+
+                      <br>
+                      <p> //--GAGAL-----------------------------------------------------------</p>
+                  </div>
+              </section>
+          </div>
+
+          <div hidden id="targetAccor3">
+              <section>
+                  <div class="bagParent">
+                    <div id="idEmbedOut"></div> <!--embed svg-->
+                    <div id="idEmbed"></div> <!--embed svg-->
+                  </div>
+              </section>
+          </div>
+        
+
+        </div>
+      </div>
+  </section>
+
+
+  
+  <script async type="module" src="/static/mainModule.js"></script>
+
+  
+</body>
+</html>
+
+

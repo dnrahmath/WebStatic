@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./ujiUpload.css">
+  <title>Document</title>
+</head>
+
+
+<body>
+
+  <section>
+
+    <form class="formUpload" action="#">
+      <!-- <input id="idFileInput" type="file" name="berkasIMG[]" onchange="" accept=".svg" allowdirs multiple /> --> 
+      <input id="idFileInput" type="file" name="berkasIMG[]" onchange="" accept=".svg" allowdirs multiple />
+      <div class="pUpload">
+        <div class="TxtFName">
+          <p>Drag your files here or click in this area.</p>
+        </div>
+      </div>
+      <button id="myBtn">Open Info File</button> <!--type="submit"-->
+      <div class="TxtFNameOut">
+        Your download will begin automatically. If it didn’t start, <a id="outputDownload" href="">download SVG file manually.</a> 
+      </div>
+      <div class="TxtFNameOut" id="status"></div>
+      <div class="TxtFNameOut" id="idFileNama">FileNama</div>
+    </form>
+
+  </section>
+
+  <!----------------------------------------------------------------------------------------------->
+
+  <section>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal" style="display: none;">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Some text in the Modal..</p>
+          <br>
+
+
+          <button id="btnAccor0">btnAccor0 : Turn On</button>
+          <button id="btnAccor1">btnAccor1 : Turn On</button>
+
+
+          <div hidden id="targetAccor0">
+              <section>
+                  <div>
+                      <br>
+                      <form action="">
+                          <div class="bagParent">
+                              <div class="bagParent1">
+                                  <div class="bag1">Nama</div>
+                                  <div class="bag2"> : </div>
+                                  <div class="bag3" id="idFileNama">FileNama</div>
+                              </div>
+                              <div class="bagParent1">
+                                  <div class="bag1">Size</div>
+                                  <div class="bag2"> : </div>
+                                  <div class="bag3" id="idFileSize">FileSize</div>
+                              </div>
+                              <div class="bagParent1">
+                                  <div class="bag1">Type</div>
+                                  <div class="bag2"> : </div>
+                                  <div class="bag3" id="idFileType">FileType</div>
+                              </div>
+                              <div class="bagParent1">
+                                  <div class="bag1">lastModifiedDate</div>
+                                  <div class="bag2"> : </div>
+                                  <div class="bag3" id="idFilelastModifiedDate">FilelastModifiedDate</div>
+                              </div>
+                              <div class="bagParent1">
+                                  <div class="bag1">Jumlah Seluruh File Upload</div>
+                                  <div class="bag2"> : </div>
+                                  <div class="bag3" id="idFileLength">FileLength</div>
+                              </div>
+                          </div>
+                      </form>
+
+                      <br>
+                  </div>
+              </section>
+          </div>
+
+          <div hidden id="targetAccor1">
+              <section>
+                  <div class="bagParent">
+                      <div class="bagParent1">
+                          <div class="bag1">StringFile</div>
+                          <div class="bag2"> : </div>
+                          <div class="bag3" id="outputTxt">outputTxt</div>
+                      </div>
+                      <div class="bagParent1">
+                          <img id="output">output</img>
+                      </div>
+                      <div class="bagParent1">
+                          <img id="outputArr">outputArr</img>
+                      </div>
+                  </div>
+              </section>
+          </div>
+
+        </div>
+      </div>
+  </section>
+
+
+  
+  <script async type="module" src="./mainModule.js"></script>
+
+  
+</body>
+</html>
+
+

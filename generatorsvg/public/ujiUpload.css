@@ -1,0 +1,159 @@
+/*------------------------------------------------------*/
+.formUpload{
+  position: absolute;
+  top: 5vh; /*jarak keatas*/
+  left: 5vw;
+  /*margin-top: -100px;*/
+  /*margin-left: -250px;*/
+  height: 50vh;
+  width: 90vw;
+  /*border: 4px dashed #fff;*/
+  border: 4px dashed rgb(0, 0, 0);
+}
+.pUpload{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /*padding-top: 20vh;*/
+  /*color: #ffffff;*/
+  font-family: Arial;
+}
+.formUpload input{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+}
+.TxtFName{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 20vh;
+  /*line-height: 170px;*/
+  /*color: #ffffff;*/
+  font-family: Arial;
+  font-size: 18px;
+}
+.TxtFNameOut{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-top: 2.5vh;
+  /*line-height: 170px;*/
+  /*color: #ffffff;*/
+  font-family: Arial;
+  font-size: 14px;
+}
+
+/*------------------------------------------------------*/
+.formUpload button{
+  margin: 0;
+  color: #fff; /*color txt*/
+  background: #16a085;
+  border: none;
+  width: 90vw;
+  height: 10vh;
+  margin-top: 2.5vh;
+  /*margin-left: -4px;*/
+  border-radius: 4px;
+  border-bottom: 4px solid #117A60;
+  transition: all .2s ease;
+  outline: none;
+  font-size: 14px;
+}
+.formUpload button:hover{
+  background: #149174;
+  color: #0C5645;
+}
+.formUpload button:active{
+  border:0;
+}
+/*------------------------------------------------------*/
+/*------------------------------------------------------*/
+/*------------------------------------------------------*/
+
+
+
+
+.bagParent {
+    width : auto;
+    border-style: groove;
+    border-width: 5px;  
+    padding: 20px;
+    margin-top: 20px;
+}
+.bagParent1 {
+    width : auto;
+    /*border-style: groove;*/
+    /*border-width: 5px;*/
+    padding: 20px;
+    padding-bottom: 40px;
+}
+.bag1 {
+    width : 16%;
+    float: left;
+}
+.bag2 {
+    width : 1%;
+    float: left;
+}
+.bag3 {
+    width : auto;
+    float: left;
+}
+
+
+
+/*-------------------------------------------------------*/
+.uploadClass {
+    width: 50vw;
+    padding-top:75px; /*selisih 15px*/
+    padding-left: 5vw;
+    padding-bottom:60px; /*selisih 15px*/
+    margin-left: 22vw;
+    border-style: groove;
+}
+/*-------------------------------------------------------*/
+
+
+
+/*-------------------------------------------------------*/
+/* The Modal (background) */
+.modal { //bagian hitam
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 10px; /* Location of the box */
+  padding-left: 10px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  padding: 25px; /* Location of the box */
+  border: 1px solid #888;
+  width: 94.5%;
+}
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*-------------------------------------------------------*/

@@ -5,6 +5,7 @@
 # List Web
 
 - https://dnrahmath.github.io/WebStatic/sequence
+- https://dnrahmath.github.io/WebStatic/generatorsvg
 
 - https://dnrahmath.github.io/WebStatic/Website-Pelayanan-Informasi-Rumah-Sakit-Indah-Laraswati/
 
